@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Comité Directivo — pruebas de layout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--am:#ffc72c;--am-deep:#E6A800;--negro:#0f0f10;--tinta:#1a1a1c;--blanco:#fff;--hueso:#f6f5f2;--gris:#6c6c6e;--gris-claro:#e4e4df;--tit:'Barlow',system-ui,sans-serif;--body:'Barlow',system-ui,sans-serif;--wrap:1320px;--e:cubic-bezier(.22,.61,.36,1)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--tinta);background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+  h1,h2,h3{font-family:var(--tit);font-weight:600;letter-spacing:-0.02em;text-wrap:balance}
+  .wrap{width:90%;max-width:var(--wrap);margin-inline:auto}
+  .kick{font-family:var(--tit);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);display:inline-flex;align-items:center;gap:10px}
+  .kick::before{content:"";width:26px;height:3px;background:var(--am)}
+
+  /* etiqueta de prueba */
+  .tag-prueba{background:var(--negro);color:#fff;padding:14px 0}
+  .tag-prueba .wrap{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .tag-prueba b{font-family:var(--tit);font-size:1.05rem}
+  .tag-prueba span{font-size:.85rem;color:rgba(255,255,255,.6)}
+
+  /* ============ PROPUESTA A — grilla editorial 4x2 con header integrado ============ */
+  .propA{padding:clamp(48px,7vw,96px) 0}
+  .propA .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.4vw,34px) clamp(14px,1.8vw,26px)}
+  .propA .intro{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px}
+  .propA .intro .kick{margin-bottom:14px}
+  .propA .intro h2{font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.05;color:var(--negro)}
+  .propA .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--hueso)}
+  .propA .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--e)}
+  .propA .card:hover .ph img{transform:scale(1.04)}
+  .propA .meta{padding-top:12px;border-top:1px solid var(--gris-claro);margin-top:12px}
+  .propA .nm{font-family:var(--tit);font-weight:600;font-size:1.02rem;color:var(--negro);line-height:1.15}
+  .propA .ro{font-size:.85rem;color:var(--gris);margin-top:3px}
+  .propA .lk{display:inline-block;font-family:var(--tit);font-weight:600;font-size:11.5px;color:var(--gris);margin-top:8px;border-bottom:1.5px solid var(--am);padding-bottom:2px;transition:color .2s}
+  .propA .card:hover .lk{color:var(--negro)}
+  @media(max-width:860px){
+    .propA .grid{grid-template-columns:1fr 1fr;gap:26px 14px}
+    .propA .intro{grid-column:1/-1;padding-bottom:0}
+  }
+
+  /* ============ PROPUESTA B — franja horizontal tipo "Stories" EL ============ */
+  .propB{background:var(--hueso);padding:clamp(48px,7vw,96px) 0}
+  .propB .bhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,3vw,40px)}
+  .propB .bhead .kick{margin-bottom:14px}
+  .propB .bhead h2{font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.05;color:var(--negro)}
+  .propB .arrows{display:flex;gap:8px}
+  .propB .arrows button{width:42px;height:42px;border-radius:50%;border:1px solid var(--gris-claro);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--negro);transition:.25s;font-size:16px}
+  .propB .arrows button:hover{background:var(--am);border-color:var(--am)}
+  .propB .rail-w{overflow:hidden}
+  .propB .rail{display:flex;gap:clamp(14px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+  .propB .rail::-webkit-scrollbar{display:none}
+  .propB .per{flex:0 0 clamp(200px,17.5vw,240px);scroll-snap-align:start}
+  .propB .per .ph{position:relative;aspect-ratio:5/7;overflow:hidden;background:#e9e8e4}
+  .propB .per .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--e)}
+  .propB .per:hover .ph img{transform:scale(1.045)}
+  .propB .per .ph::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--am);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--e)}
+  .propB .per:hover .ph::after{transform:scaleX(1)}
+  .propB .nm{font-family:var(--tit);font-weight:600;font-size:1rem;color:var(--negro);margin-top:12px;line-height:1.15}
+  .propB .ro{font-size:.84rem;color:var(--gris);margin-top:3px}
+  .propB .lk{display:inline-block;font-family:var(--tit);font-weight:600;font-size:11.5px;color:var(--gris);margin-top:7px;transition:color .2s}
+  .propB .per:hover .lk{color:var(--negro)}
+  @media(max-width:860px){
+    .propB .arrows{display:none}
+    .propB .per{flex:0 0 62vw}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ================= PROPUESTA A ================= -->
+  <div class="tag-prueba"><div class="wrap"><b>Propuesta A</b><span>Grilla editorial 4×2 — el header ocupa la primera celda, 7 retratos con hairline. Compacta: dos filas exactas.</span></div></div>
+  <section class="propA">
+    <div class="wrap">
+      <div class="grid">
+        <div class="intro">
+          <span class="kick">Comité Directivo</span>
+          <h2>El equipo que lidera Veltis Latam.</h2>
+        </div>
+        <article class="card"><div class="ph"><img src="img/directivo/MarceloOcampo.jpg" alt="Marcelo Ocampo, CEO de Veltis Latam"></div><div class="meta"><div class="nm">Marcelo Ocampo</div><div class="ro">CEO</div><a class="lk" href="https://www.linkedin.com/in/marcelo-ocampo-86232b6/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/KarenG.jpg" alt="Karen Gutiérrez, VP Personas y Cultura"></div><div class="meta"><div class="nm">Karen Gutiérrez</div><div class="ro">VP Personas y Cultura</div><a class="lk" href="https://www.linkedin.com/in/karen-gutierrez-diaz-48625150/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/AndresZelaya.jpg" alt="Andrés Zelaya, VP Operaciones"></div><div class="meta"><div class="nm">Andrés Zelaya</div><div class="ro">VP Operaciones</div><a class="lk" href="https://www.linkedin.com/in/andr%C3%A9s-zelaya-villalobos-60b851180/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/ClaudaB.jpg" alt="Claudia Brantt, VP Administración y Finanzas"></div><div class="meta"><div class="nm">Claudia Brantt</div><div class="ro">VP Administración y Finanzas</div><a class="lk" href="https://www.linkedin.com/in/claudia-brantt-89893a39/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/JorgePonce.jpg" alt="Jorge Ponce, VP Comercial"></div><div class="meta"><div class="nm">Jorge Ponce</div><div class="ro">VP Comercial</div><a class="lk" href="https://www.linkedin.com/in/jorgeponceriveros/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/MariaJoseBecker.jpg" alt="María José Becker, VP Asuntos Legales"></div><div class="meta"><div class="nm">María José Becker</div><div class="ro">VP Asuntos Legales</div><a class="lk" href="https://www.linkedin.com/in/mjbecker2/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+        <article class="card"><div class="ph"><img src="img/directivo/AlbertoZu%C3%B1iga.jpg" alt="Alberto Zúñiga, VP Negocios"></div><div class="meta"><div class="nm">Alberto Zúñiga</div><div class="ro">VP Negocios</div><a class="lk" href="https://www.linkedin.com/in/alberto-zuniga-h/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROPUESTA B ================= -->
+  <div class="tag-prueba"><div class="wrap"><b>Propuesta B</b><span>Franja horizontal tipo "Stories" de EssilorLuxottica — una sola fila con desliz lateral y flechas. Mínimo scroll vertical.</span></div></div>
+  <section class="propB">
+    <div class="wrap">
+      <div class="bhead">
+        <div><span class="kick">Comité Directivo</span><h2>El equipo que lidera Veltis Latam.</h2></div>
+        <div class="arrows"><button id="bPrev" aria-label="Anterior">←</button><button id="bNext" aria-label="Siguiente">→</button></div>
+      </div>
+      <div class="rail-w">
+        <div class="rail" id="rail">
+          <article class="per"><div class="ph"><img src="img/directivo/MarceloOcampo.jpg" alt="Marcelo Ocampo, CEO de Veltis Latam"></div><div class="nm">Marcelo Ocampo</div><div class="ro">CEO</div><a class="lk" href="https://www.linkedin.com/in/marcelo-ocampo-86232b6/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/KarenG.jpg" alt="Karen Gutiérrez, VP Personas y Cultura"></div><div class="nm">Karen Gutiérrez</div><div class="ro">VP Personas y Cultura</div><a class="lk" href="https://www.linkedin.com/in/karen-gutierrez-diaz-48625150/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/AndresZelaya.jpg" alt="Andrés Zelaya, VP Operaciones"></div><div class="nm">Andrés Zelaya</div><div class="ro">VP Operaciones</div><a class="lk" href="https://www.linkedin.com/in/andr%C3%A9s-zelaya-villalobos-60b851180/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/ClaudaB.jpg" alt="Claudia Brantt, VP Administración y Finanzas"></div><div class="nm">Claudia Brantt</div><div class="ro">VP Administración y Finanzas</div><a class="lk" href="https://www.linkedin.com/in/claudia-brantt-89893a39/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/JorgePonce.jpg" alt="Jorge Ponce, VP Comercial"></div><div class="nm">Jorge Ponce</div><div class="ro">VP Comercial</div><a class="lk" href="https://www.linkedin.com/in/jorgeponceriveros/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/MariaJoseBecker.jpg" alt="María José Becker, VP Asuntos Legales"></div><div class="nm">María José Becker</div><div class="ro">VP Asuntos Legales</div><a class="lk" href="https://www.linkedin.com/in/mjbecker2/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+          <article class="per"><div class="ph"><img src="img/directivo/AlbertoZu%C3%B1iga.jpg" alt="Alberto Zúñiga, VP Negocios"></div><div class="nm">Alberto Zúñiga</div><div class="ro">VP Negocios</div><a class="lk" href="https://www.linkedin.com/in/alberto-zuniga-h/" target="_blank" rel="noopener">LinkedIn ↗</a></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var rail=document.getElementById('rail');
+    var step=function(){var p=rail.querySelector('.per');return p?p.getBoundingClientRect().width+18:260};
+    document.getElementById('bPrev').addEventListener('click',function(){rail.scrollBy({left:-step()*2,behavior:'smooth'});});
+    document.getElementById('bNext').addEventListener('click',function(){rail.scrollBy({left:step()*2,behavior:'smooth'});});
+  })();
+  </script>
+</body>
+</html>
