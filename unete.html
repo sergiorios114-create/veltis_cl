@@ -39,6 +39,9 @@
   .nav .links .sub.mega .all{grid-column:1/-1;margin-top:10px;padding:13px 14px 5px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--tit);font-weight:600;font-size:13px;color:rgba(255,255,255,.8)}
   .nav .links .sub.mega .all::after{content:" →";display:inline}
   .nav .links .sub.mega .all:hover{color:#fff;background:none}
+  .nav .links .sub.mini{min-width:272px}
+  .nav .links .sub.mini a{display:flex;align-items:center;gap:10px;font-family:var(--tit);font-weight:600;font-size:14px;color:rgba(255,255,255,.85)}
+  .nav .links .sub.mini a::before{content:"";width:6px;height:6px;border-radius:50%;background:#ffc72c;flex:0 0 auto}
   .nav .u{display:inline-flex;align-items:center;color:var(--negro);background:var(--am);font-size:13.5px;font-weight:600;letter-spacing:.02em;padding:11px 18px;border-radius:100px;transition:.25s}
   .nav .u:hover{background:var(--am-deep);color:#fff}
   @media(max-width:860px){.nav .links{display:none}}
@@ -53,6 +56,8 @@
   .ops .op .t{font-family:var(--tit);font-weight:700;font-size:1.2rem;color:var(--negro);display:flex;align-items:center;gap:9px}
   .ops .op .t::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--am)}
   .ops .op .s{font-size:.92rem;color:var(--gris)}
+  .tcta{display:inline-flex;margin-top:clamp(26px,4vw,40px);font-family:var(--tit);font-weight:600;font-size:15px;color:var(--negro);border-bottom:2px solid var(--am);padding-bottom:3px;transition:color .2s}
+  .tcta:hover{color:var(--am-deep)}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
   /* ---------------- MENU MOVIL ---------------- */
@@ -110,7 +115,7 @@
       <div class="has-sub"><a href="nosotros.html">Nosotros <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sub"><a href="nosotros.html#carta-valores">Carta de Valores</a><a href="nosotros.html#comite">Comité Directivo</a><a href="nosotros.html#compromiso">Compromiso</a></div></div>
       <div class="has-sub"><a href="servicios.html">Servicios <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sub mega"><a class="it" href="berliam.html" style="--bc:#6bbf3f"><span class="t">Berliam</span><span class="d">Mantenimiento integral de plantas mineras.</span></a><a class="it" href="steel.html" style="--bc:#f15a24"><span class="t">Steel</span><span class="d">Soporte operacional para contratos exigentes.</span></a><a class="it" href="walvis.html" style="--bc:#3fb8c4"><span class="t">Walvis</span><span class="d">Control ambiental para la minería.</span></a><a class="it" href="quintrax.html" style="--bc:#7a4fb0"><span class="t">Quintrax</span><span class="d">Respuesta inmediata y mantenimiento spot.</span></a><a class="all" href="servicios.html">Ver todos los servicios</a></div></div>
       <a href="noticias.html">Noticias</a>
-      <a href="contacto.html">Contacto</a>
+      <div class="has-sub"><a href="contacto.html">Contacto <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sub mini"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
     </div>
     <a class="u" href="unete.html">Únete a Veltis</a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
@@ -122,7 +127,7 @@
       <div class="mgrp"><a href="nosotros.html">Nosotros</a><div class="msub"><a href="nosotros.html#carta-valores">Carta de Valores</a><a href="nosotros.html#comite">Comité Directivo</a><a href="nosotros.html#compromiso">Compromiso</a></div></div>
       <div class="mgrp"><a href="servicios.html">Servicios</a><div class="msub"><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div></div>
       <a href="noticias.html">Noticias</a>
-      <a href="contacto.html">Contacto</a>
+      <div class="mgrp"><a href="contacto.html">Contacto</a><div class="msub"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
       <a class="mu" href="unete.html">Únete a Veltis</a>
     </nav>
   </div>
@@ -141,6 +146,7 @@
         <div class="op"><span class="t">Operación 5</span><span class="s">Vacantes — pendiente de Veltis</span></div>
         <div class="op"><span class="t">Operación 6</span><span class="s">Vacantes — pendiente de Veltis</span></div>
       </div>
+      <a class="tcta" href="contacto.html#talento">¿No encuentras tu vacante? Déjanos tus datos →</a>
     </div>
   </header>
 
