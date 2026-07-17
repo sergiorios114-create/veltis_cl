@@ -277,8 +277,17 @@
   .news .row:hover h3{color:#000}
   .news .row .th{width:96px;height:96px;border-radius:6px;overflow:hidden;background:#ddd;opacity:0;transform:scale(.9);transition:.4s;justify-self:end}
   .news .row:hover .th{opacity:1;transform:scale(1)}
-  .news .row .th img{width:100%;height:100%;object-fit:cover}
-  @media(max-width:860px){.news .row{grid-template-columns:1fr;gap:8px}.news .row .th{display:none}.news .row:hover{padding-left:0}}
+  .news .row .th img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+  /* Post activo — primera noticia preseleccionada */
+  .news .row.on{grid-template-columns:140px 1fr clamp(200px,20vw,300px);border-left:4px solid var(--amarillo);padding-left:18px}
+  .news .row.on:hover{padding-left:18px}
+  .news .row.on .th{width:100%;height:clamp(140px,13vw,190px);opacity:1;transform:none;border-radius:8px}
+  .news .row.on:hover .th img{transform:scale(1.05)}
+  .news .row.on h3{font-size:clamp(1.5rem,2.6vw,2.3rem);color:#000}
+  .news .row.on .cl .cat{display:inline-block;background:var(--amarillo);color:var(--negro);font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:100px}
+  @media(max-width:860px){.news .row{grid-template-columns:1fr;gap:8px}.news .row .th{display:none}.news .row:hover{padding-left:0}
+    .news .row.on{grid-template-columns:1fr;padding-left:14px}.news .row.on:hover{padding-left:14px}
+    .news .row.on .th{display:block;width:100%;height:clamp(160px,42vw,220px);order:-1;margin-bottom:8px}}
 
   /* ---------------- UNETE (cierre) ---------------- */
   .unete{position:relative;min-height:90svh;display:flex;align-items:center;overflow:hidden;color:#fff;text-align:center;justify-content:center}
@@ -511,7 +520,7 @@
         <div><div class="k">Novedades</div><h2>Lo último de Veltis</h2></div>
         <a class="all" href="noticias.html">Ver todas →</a>
       </div>
-      <a class="row" href="#"><div class="cl"><div class="cat">Personas</div><div class="date">12 Jun 2026</div></div><h3>Reconocidos por nuestro aporte al talento y liderazgo femenino en la minería</h3><div class="th"><img loading="lazy" decoding="async" src="img/p16.jpg" alt=""></div></a>
+      <a class="row on" href="#"><div class="cl"><div class="cat">Personas</div><div class="date">12 Jun 2026</div></div><h3>Reconocidos por nuestro aporte al talento y liderazgo femenino en la minería</h3><div class="th"><img loading="lazy" decoding="async" src="img/p16.jpg" alt=""></div></a>
       <a class="row" href="#"><div class="cl"><div class="cat">Operación</div><div class="date">05 Jun 2026</div></div><h3>Culminamos una de las mantenciones más complejas de Minera Los Pelambres</h3><div class="th"><img loading="lazy" decoding="async" src="img/p11.jpg" alt=""></div></a>
       <a class="row" href="#"><div class="cl"><div class="cat">Internacional</div><div class="date">28 May 2026</div></div><h3>Proyectamos oportunidades para el desarrollo minero argentino tras Expo San Juan</h3><div class="th"><img loading="lazy" decoding="async" src="img/port2.jpg" alt=""></div></a>
       <a class="row" href="#"><div class="cl"><div class="cat">Comunidad</div><div class="date">14 May 2026</div></div><h3>Berliam y Steel se suman a la feria laboral de Antofagasta Minerals</h3><div class="th"><img loading="lazy" decoding="async" src="img/p13.jpg" alt=""></div></a>
@@ -679,7 +688,7 @@
           r.querySelector('.cat').textContent=cat(p);
           r.querySelector('.date').textContent=fecha(p.date);
           r.querySelector('h3').innerHTML=p.title.rendered;
-          var u=img(p,'medium');
+          var u=img(p,i===0?'medium_large':'medium');
           var t=r.querySelector('.th');
           if(t)t.innerHTML=u?'<img loading="lazy" decoding="async" src="'+u+'" alt="">':'';
         });
