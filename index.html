@@ -195,7 +195,8 @@
   .acc-fw .col:hover > img{transform:scale(1.04);filter:brightness(.72)}
   .acc-fw .col .g{position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(15,15,16,.92))}
   .acc-fw .col .c{position:absolute;inset:auto 0 0 0;padding:clamp(24px,2.2vw,44px);z-index:2}
-  .acc-fw .vn{position:absolute;left:0;right:0;bottom:56px;z-index:2;text-align:center;margin-inline:auto;width:100%;padding:0 12px;font-family:var(--tit);font-weight:600;color:#fff;font-size:clamp(1.05rem,1.4vw,1.4rem);letter-spacing:.01em;line-height:1.1;transition:opacity .35s;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  .acc-fw .vn{position:absolute;left:0;right:0;bottom:clamp(44px,6vh,66px);z-index:2;display:flex;justify-content:center;padding:0 16px;transition:opacity .35s}
+  .acc-fw .vn img{height:clamp(26px,2.6vw,40px);width:auto;max-width:78%;object-fit:contain;filter:drop-shadow(0 2px 14px rgba(0,0,0,.6))}
   .acc-fw .tick{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--bc);z-index:2;transition:opacity .35s}
   .acc-fw .col:hover .vn,.acc-fw .col:hover .tick{opacity:0}
   .acc-fw .lg{height:clamp(42px,3.6vw,58px);width:auto;display:block;margin-bottom:18px;filter:drop-shadow(0 2px 12px rgba(0,0,0,.55))}
@@ -232,6 +233,31 @@
     .acc-fw .lg{max-height:16px;margin-bottom:4px}
     .acc-fw .tg{font-size:.85rem;max-width:100%}
     .acc-fw .c .arrow{font-size:10px;gap:4px}
+  }
+
+  /* ---------------- CASOS DE EXITO (cards fotograficas con texto superpuesto · estilo stories) ---------------- */
+  .blogh{background:var(--blanco);color:var(--tinta);padding:clamp(64px,8vw,120px) 0}
+  .blogh .bh-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,3vw,44px)}
+  .blogh .bh-head .k{font-family:var(--tit);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:10px}
+  .blogh .bh-head .k::before{content:"";width:22px;height:2px;background:var(--amarillo)}
+  .blogh .bh-head h2{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:600;line-height:1.04;color:var(--negro);margin-top:14px}
+  .blogh .bh-head .all{font-family:var(--tit);font-weight:600;font-size:14px;white-space:nowrap;border-bottom:2px solid var(--amarillo);padding-bottom:3px;color:var(--negro)}
+  .blogh .bh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .blogh .bc{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--negro)}
+  .blogh .bc .im{position:absolute;inset:0}
+  .blogh .bc .im img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);transition:transform .8s cubic-bezier(.22,.61,.36,1),filter .5s}
+  .blogh .bc:hover .im img{transform:scale(1.045);filter:brightness(.95)}
+  .blogh .bc .sc{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,16,.34) 0%,rgba(15,15,16,0) 30%,rgba(15,15,16,.1) 52%,rgba(15,15,16,.88) 100%)}
+  .blogh .bc .cx{position:absolute;inset:auto 0 0 0;padding:clamp(18px,1.9vw,28px);z-index:2}
+  .blogh .bc .mt{display:inline-flex;align-items:center;gap:9px;font-family:var(--tit);font-weight:600;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+  .blogh .bc .mt::before{content:"";width:18px;height:2px;background:var(--amarillo)}
+  .blogh .bc h3{font-family:var(--tit);font-weight:600;font-size:clamp(1.1rem,1.45vw,1.42rem);line-height:1.22;color:#fff;margin-top:10px;text-shadow:0 1px 14px rgba(0,0,0,.4)}
+  .blogh .bc .lm{display:inline-block;margin-top:14px;font-family:var(--tit);font-weight:600;font-size:13px;color:#fff;border-bottom:2px solid var(--amarillo);padding-bottom:3px;opacity:.8;transition:opacity .25s}
+  .blogh .bc:hover .lm{opacity:1}
+  @media(max-width:860px){
+    .blogh .bh-grid{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+    .blogh .bh-grid::-webkit-scrollbar{display:none}
+    .blogh .bc{flex:0 0 74%;scroll-snap-align:start}
   }
 
   /* ---------------- NOTICIAS ---------------- */
@@ -340,7 +366,7 @@
       </div>
       <div class="has-sub">
         <a href="servicios.html">Servicios <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="sub mega"><a class="it" href="berliam.html" style="--bc:#6bbf3f"><span class="t">Berliam</span><span class="d">Mantenimiento integral de plantas mineras.</span></a><a class="it" href="steel.html" style="--bc:#f15a24"><span class="t">Steel</span><span class="d">Soporte operacional para contratos exigentes.</span></a><a class="it" href="walvis.html" style="--bc:#3fb8c4"><span class="t">Walvis</span><span class="d">Control ambiental para la minería.</span></a><a class="it" href="quintrax.html" style="--bc:#7a4fb0"><span class="t">Quintrax</span><span class="d">Respuesta inmediata y mantenimiento spot.</span></a><a class="all" href="servicios.html">Ver todos los servicios</a></div>
+        <div class="sub mega"><a class="it" href="berliam.html" style="--bc:#6bbf3f"><span class="t">Berliam</span><span class="d">Mantenimiento integral de plantas mineras.</span></a><a class="it" href="steel.html" style="--bc:#f15a24"><span class="t">Steel</span><span class="d">Soporte operacional para contratos exigentes.</span></a><a class="it" href="walvis.html" style="--bc:#3fb8c4"><span class="t">Walvis</span><span class="d">Control y mitigación ambiental para la minería.</span></a><a class="it" href="quintrax.html" style="--bc:#7a4fb0"><span class="t">Quintrax</span><span class="d">Respuesta inmediata y mantenimiento spot.</span></a><a class="it" href="servicios-especializados.html" style="--bc:#ffc72c;grid-column:1/-1"><span class="t">Servicios especializados</span><span class="d">Capacidades transversales que integran a todo el grupo.</span></a><a class="all" href="servicios.html">Ver todos los servicios</a></div>
       </div>
       <a href="noticias.html">Noticias</a>
       <div class="has-sub"><a href="contacto.html">Contacto <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sub mini"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
@@ -353,7 +379,7 @@
     <nav class="mi" aria-label="Menú móvil">
       <a href="index.html">Inicio</a>
       <div class="mgrp"><a href="nosotros.html">Nosotros</a><div class="msub"><a href="nosotros.html#carta-valores">Carta de Valores</a><a href="nosotros.html#comite">Comité Directivo</a><a href="nosotros.html#compromiso">Compromiso</a></div></div>
-      <div class="mgrp"><a href="servicios.html">Servicios</a><div class="msub"><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div></div>
+      <div class="mgrp"><a href="servicios.html">Servicios</a><div class="msub"><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a><a href="servicios-especializados.html">Serv. especializados</a></div></div>
       <a href="noticias.html">Noticias</a>
       <div class="mgrp"><a href="contacto.html">Contacto</a><div class="msub"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
       <a class="mu" href="unete.html">Únete a Veltis</a>
@@ -407,7 +433,7 @@
       <div class="cf-stats rv">
         <div class="st"><div class="n"><span class="p">+</span><span class="cnt" data-to="150">0</span></div><div class="l">Contratos ejecutados</div></div>
         <div class="st"><div class="n"><span class="p">+</span><span class="cnt" data-to="4000">0</span></div><div class="l">Trabajadores</div></div>
-        <div class="st"><div class="n"><span class="p">+</span><span class="cnt" data-to="5">0</span></div><div class="l">Ciudades en Chile</div></div>
+        <div class="st"><div class="n"><span class="p">+</span><span class="cnt" data-to="5">0</span></div><div class="l">Regiones del país</div></div>
         <div class="st"><div class="n"><span class="p">+</span><span class="cnt" data-to="25">0</span></div><div class="l">Años de experiencia</div></div>
       </div>
       <div class="cf-certs rv">
@@ -442,33 +468,48 @@
     <div class="acc-fw rv">
       <div class="col" style="--bc:#6bbf3f">
         <img loading="lazy" decoding="async" src="img/b-berliam.jpg" alt="Operario Berliam en mantenimiento de equipos"><div class="g"></div>
-        <div class="vn">Berliam</div><span class="tick"></span>
-        <div class="c"><img class="lg" src="img/logos/berliam-cw.png" alt="Berliam"><h3 class="tg">Mantenimiento que no detiene la planta.</h3><p>Sostenemos la continuidad operacional de plantas mineras mediante soluciones integrales de mantenimiento.</p><a class="arrow" href="berliam.html">Ver marca</a></div>
+        <div class="vn"><img loading="lazy" src="img/logos/berliam-cw.png" alt="Berliam"></div><span class="tick"></span>
+        <div class="c"><img class="lg" src="img/logos/berliam-cw.png" alt="Berliam"><h3 class="tg">Mantenimiento que no detiene la planta.</h3><p>Realizamos soluciones integrales de mantenimiento para la continuidad operacional de plantas mineras.</p><a class="arrow" href="berliam.html">Ver marca</a></div>
       </div>
       <div class="col" style="--bc:#f15a24">
         <img loading="lazy" decoding="async" src="img/port1.jpg" alt="Terminal de embarque Steel"><div class="g"></div>
-        <div class="vn">Steel</div><span class="tick"></span>
+        <div class="vn"><img loading="lazy" src="img/logos/steel-cw.png" alt="Steel"></div><span class="tick"></span>
         <div class="c"><img class="lg" src="img/logos/steel-cw.png" alt="Steel"><h3 class="tg">Soporte para contratos exigentes.</h3><p>Proporcionamos soporte operacional para contratos exigentes, combinando ejecución en terreno con experiencia crítica.</p><a class="arrow" href="steel.html">Ver marca</a></div>
       </div>
       <div class="col" style="--bc:#3fb8c4">
         <img loading="lazy" decoding="async" src="img/b-walvis.jpg" alt="Ductos e instalaciones Walvis en faena"><div class="g"></div>
-        <div class="vn">Walvis</div><span class="tick"></span>
-        <div class="c"><img class="lg" src="img/logos/walvis-cw.png" alt="Walvis"><h3 class="tg">Operación minera más sostenible.</h3><p>Promovemos operaciones mineras sostenibles con soluciones para el control ambiental.</p><a class="arrow" href="walvis.html">Ver marca</a></div>
+        <div class="vn"><img loading="lazy" src="img/logos/walvis-cw.png" alt="Walvis"></div><span class="tick"></span>
+        <div class="c"><img class="lg" src="img/logos/walvis-cw.png" alt="Walvis"><h3 class="tg">Operación minera más sostenible.</h3><p>Promovemos operaciones mineras sostenibles con soluciones para el control y mitigación ambiental.</p><a class="arrow" href="walvis.html">Ver marca</a></div>
       </div>
       <div class="col" style="--bc:#7a4fb0">
         <img loading="lazy" decoding="async" src="img/b-quintrax.jpg" alt="Intervención de mantenimiento Quintrax"><div class="g"></div>
-        <div class="vn">Quintrax</div><span class="tick"></span>
-        <div class="c"><img class="lg" src="img/logos/quintrax-cw.png" alt="Quintrax"><h3 class="tg">Respuesta inmediata a contingencias.</h3><p>Resolvemos contingencias operacionales con equipos especializados y disponibilidad inmediata, incluso con alto número de personas.</p><a class="arrow" href="quintrax.html">Ver marca</a></div>
+        <div class="vn"><img loading="lazy" src="img/logos/quintrax-cw.png" alt="Quintrax"></div><span class="tick"></span>
+        <div class="c"><img class="lg" src="img/logos/quintrax-cw.png" alt="Quintrax"><h3 class="tg">Respuesta inmediata a contingencias.</h3><p>Realizamos mantenimiento spot y proyectos mineros de hasta 12 meses, con equipos especializados, alta capacidad de respuesta y disponibilidad inmediata.</p><a class="arrow" href="quintrax.html">Ver marca</a></div>
       </div>
     </div>
   </section>
 
-  <!-- CAPITULO 4 — NOTICIAS (indice tipografico · zona de descanso visual) -->
+  <!-- CAPITULO 4 — BLOG (cards con imagen · reemplaza los casos de exito por empresa) -->
+  <section class="blogh" id="blog">
+    <div class="wrap">
+      <div class="bh-head rv">
+        <div><div class="k">Blog</div><h2>Casos de éxito</h2></div>
+        <a class="all" href="noticias.html">Ver el blog →</a>
+      </div>
+      <div class="bh-grid rv" id="bhGrid">
+        <a class="bc" href="noticias.html"><div class="im"><img loading="lazy" decoding="async" src="img/p16.jpg" alt=""></div><div class="sc"></div><div class="cx"><span class="mt">Noticias</span><h3>Reconocidos por nuestro aporte al talento y liderazgo femenino en la minería</h3><span class="lm">Leer más →</span></div></a>
+        <a class="bc" href="noticias.html"><div class="im"><img loading="lazy" decoding="async" src="img/p11.jpg" alt=""></div><div class="sc"></div><div class="cx"><span class="mt">Noticias</span><h3>Culminamos una de las mantenciones más complejas de Minera Los Pelambres</h3><span class="lm">Leer más →</span></div></a>
+        <a class="bc" href="noticias.html"><div class="im"><img loading="lazy" decoding="async" src="img/port2.jpg" alt=""></div><div class="sc"></div><div class="cx"><span class="mt">Noticias</span><h3>Proyectamos oportunidades para el desarrollo minero argentino tras Expo San Juan</h3><span class="lm">Leer más →</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPITULO 5 — NOTICIAS (indice tipografico · zona de descanso visual) -->
   <section class="news" id="noticias">
     <div class="wrap">
       <div class="nhead rv">
         <div><div class="k">Novedades</div><h2>Lo último de Veltis</h2></div>
-        <a class="all" href="#">Ver todas →</a>
+        <a class="all" href="noticias.html">Ver todas →</a>
       </div>
       <a class="row" href="#"><div class="cl"><div class="cat">Personas</div><div class="date">12 Jun 2026</div></div><h3>Reconocidos por nuestro aporte al talento y liderazgo femenino en la minería</h3><div class="th"><img loading="lazy" decoding="async" src="img/p16.jpg" alt=""></div></a>
       <a class="row" href="#"><div class="cl"><div class="cat">Operación</div><div class="date">05 Jun 2026</div></div><h3>Culminamos una de las mantenciones más complejas de Minera Los Pelambres</h3><div class="th"><img loading="lazy" decoding="async" src="img/p11.jpg" alt=""></div></a>
@@ -478,7 +519,7 @@
     </div>
   </section>
 
-  <!-- CAPITULO 5 — UNETE -->
+  <!-- CAPITULO 6 — UNETE -->
   <section class="unete" id="unete">
     <div class="bg"><img loading="lazy" decoding="async" src="img/p04.jpg" alt="Trabajador de Veltis celebrando en faena"></div>
     <div class="grad"></div>
@@ -500,13 +541,13 @@
         <div class="off"><span class="ci">Los Andes</span><span class="ad">Av. Argentina Oriente #17, of. 29, Ed. Viracocha · +56 34 2490065</span></div>
         <div class="off"><span class="ci">Rancagua</span><span class="ad">Josefina Granger #7, O'Higgins · +56 9 47493686</span></div>
         <div class="off"><span class="ci">Copiapó</span><span class="ad">Dirección pendiente de Veltis</span></div>
-        <div class="off soon"><span class="ci">Perú</span><span class="ad">Próximamente</span></div>
+        <div class="off soon"><span class="ci">Perú</span><span class="ad">Explorando nuevos mercados</span></div>
       </div>
       <div class="gov">
         <div class="col"><div class="h">Sitio</div><a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="noticias.html">Noticias</a><a href="contacto.html">Contacto</a><a href="unete.html">Únete a Veltis</a></div>
         <div class="col"><div class="h">Compañías</div><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div>
         <div class="col"><div class="h">Gobernanza</div><a href="#">Gobierno corporativo</a><a href="nosotros.html#comite">Comité Directivo</a><a href="#">Código de ética</a></div>
-        <div class="col"><div class="h">Cumplimiento</div><a href="#">Canal de Denuncias</a><a href="#">Compliance</a><a href="#">Certificaciones</a></div>
+        <div class="col"><div class="h">Cumplimiento</div><a href="https://veltislatam.buk.cl/partner_complaint/tickets/new" target="_blank" rel="noopener">Canal de Denuncias</a><a href="#">Compliance</a><a href="#">Certificaciones</a></div>
         <div class="col"><div class="h">Sostenibilidad</div><a href="nosotros.html#compromiso">Modelo de impacto</a><a href="#">Empleabilidad territorial</a><a href="#">Sello Iguala</a></div>
         <div class="col"><div class="h">Legal</div><a href="#">Política de Privacidad</a><a href="#">Términos de uso</a><a href="#">Accesibilidad</a></div>
       </div>
@@ -605,6 +646,46 @@
   });
 
   window.addEventListener('load',()=>ScrollTrigger.refresh());
+  </script>
+  <script>
+  /* Blog en el home: ultimos posts reales desde el WordPress actual de Veltis (puente por API).
+     Cards = posts 1-3 · indice tipografico = posts 4-8. Si la API falla, quedan los placeholders. */
+  (function(){
+    var MESES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    function fecha(d){var x=new Date(d);return x.getDate()+' '+MESES[x.getMonth()]+' '+x.getFullYear();}
+    function img(p,size){
+      var m=p._embedded&&p._embedded['wp:featuredmedia']&&p._embedded['wp:featuredmedia'][0];
+      if(!m)return'';
+      var s=m.media_details&&m.media_details.sizes;
+      return (s&&s[size]&&s[size].source_url)||m.source_url||'';
+    }
+    function cat(p){try{return p._embedded['wp:term'][0][0].name}catch(e){return'Noticias'}}
+    fetch('https://www.veltislatam.com/wp-json/wp/v2/posts?per_page=8&_embed=1')
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(posts){
+        var cards=document.querySelectorAll('#bhGrid .bc');
+        posts.slice(0,3).forEach(function(p,i){
+          var c=cards[i];if(!c)return;
+          c.href=p.link;c.target='_blank';c.rel='noopener';
+          var u=img(p,'medium_large');
+          c.querySelector('.im').innerHTML=u?'<img loading="lazy" decoding="async" src="'+u+'" alt="">':'';
+          c.querySelector('.mt').textContent=cat(p)+' · '+fecha(p.date);
+          c.querySelector('h3').innerHTML=p.title.rendered;
+        });
+        var rows=document.querySelectorAll('.news .row');
+        posts.slice(3,8).forEach(function(p,i){
+          var r=rows[i];if(!r)return;
+          r.href=p.link;r.target='_blank';r.rel='noopener';
+          r.querySelector('.cat').textContent=cat(p);
+          r.querySelector('.date').textContent=fecha(p.date);
+          r.querySelector('h3').innerHTML=p.title.rendered;
+          var u=img(p,'medium');
+          var t=r.querySelector('.th');
+          if(t)t.innerHTML=u?'<img loading="lazy" decoding="async" src="'+u+'" alt="">':'';
+        });
+      })
+      .catch(function(){/* sin conexion: se mantienen los placeholders estaticos */});
+  })();
   </script>
   <script>
   (function(){

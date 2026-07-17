@@ -70,7 +70,8 @@
   .hero .c{position:relative;z-index:2;width:90%;max-width:var(--wrap);margin-inline:auto;padding:110px 0 clamp(120px,15vh,150px)}
   .bc{display:flex;align-items:center;gap:10px;font-family:var(--tit);font-weight:600;font-size:14px;color:rgba(255,255,255,.82);margin-bottom:24px}
   .bc .sep{color:var(--ac)}
-  .hero .lg{height:clamp(46px,5.5vw,72px);width:auto;margin-bottom:26px;filter:drop-shadow(0 2px 16px rgba(0,0,0,.5))}
+  .hero .lgp{display:inline-flex;align-items:center;margin-bottom:26px;background:rgba(15,15,16,.62);backdrop-filter:blur(10px) saturate(1.2);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:13px 20px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .hero .lg{height:clamp(38px,4.4vw,56px);width:auto;filter:none}
   .hero h1{font-weight:600;font-size:clamp(2rem,4.4vw,3.7rem);line-height:1.05;max-width:16ch;letter-spacing:-0.025em;overflow-wrap:break-word}
   .hero h1 em{font-style:normal;color:var(--ac)}
   .hero .lead{font-size:clamp(1.1rem,1.5vw,1.32rem);line-height:1.55;color:rgba(255,255,255,.92);max-width:50ch;margin-top:22px}
@@ -230,7 +231,7 @@
       </div>
       <div class="has-sub">
         <a href="servicios.html">Servicios <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="sub mega"><a class="it" href="berliam.html" style="--bc:#6bbf3f"><span class="t">Berliam</span><span class="d">Mantenimiento integral de plantas mineras.</span></a><a class="it" href="steel.html" style="--bc:#f15a24"><span class="t">Steel</span><span class="d">Soporte operacional para contratos exigentes.</span></a><a class="it" href="walvis.html" style="--bc:#3fb8c4"><span class="t">Walvis</span><span class="d">Control ambiental para la minería.</span></a><a class="it" href="quintrax.html" style="--bc:#7a4fb0"><span class="t">Quintrax</span><span class="d">Respuesta inmediata y mantenimiento spot.</span></a><a class="all" href="servicios.html">Ver todos los servicios</a></div>
+        <div class="sub mega"><a class="it" href="berliam.html" style="--bc:#6bbf3f"><span class="t">Berliam</span><span class="d">Mantenimiento integral de plantas mineras.</span></a><a class="it" href="steel.html" style="--bc:#f15a24"><span class="t">Steel</span><span class="d">Soporte operacional para contratos exigentes.</span></a><a class="it" href="walvis.html" style="--bc:#3fb8c4"><span class="t">Walvis</span><span class="d">Control ambiental para la minería.</span></a><a class="it" href="quintrax.html" style="--bc:#7a4fb0"><span class="t">Quintrax</span><span class="d">Respuesta inmediata y mantenimiento spot.</span></a><a class="it" href="servicios-especializados.html" style="--bc:#ffc72c;grid-column:1/-1"><span class="t">Servicios especializados</span><span class="d">Capacidades transversales que integran a todo el grupo.</span></a><a class="all" href="servicios.html">Ver todos los servicios</a></div>
       </div>
       <a href="noticias.html">Noticias</a>
       <div class="has-sub"><a href="contacto.html">Contacto <svg class="caret" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sub mini"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
@@ -243,7 +244,7 @@
     <nav class="mi" aria-label="Menú móvil">
       <a href="index.html">Inicio</a>
       <div class="mgrp"><a href="nosotros.html">Nosotros</a><div class="msub"><a href="nosotros.html#carta-valores">Carta de Valores</a><a href="nosotros.html#comite">Comité Directivo</a><a href="nosotros.html#compromiso">Compromiso</a></div></div>
-      <div class="mgrp"><a href="servicios.html">Servicios</a><div class="msub"><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div></div>
+      <div class="mgrp"><a href="servicios.html">Servicios</a><div class="msub"><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a><a href="servicios-especializados.html">Serv. especializados</a></div></div>
       <a href="noticias.html">Noticias</a>
       <div class="mgrp"><a href="contacto.html">Contacto</a><div class="msub"><a href="contacto.html#comercial">Contacto Comercial</a><a href="contacto.html#talento">Talento</a><a href="contacto.html#corporativo">Corporativo / Alianzas</a><a href="contacto.html#sugerencias">Sugerencias y reclamos</a><a href="contacto.html#comunicaciones">Contacto Comunicaciones</a></div></div>
       <a class="mu" href="unete.html">Únete a Veltis</a>
@@ -256,7 +257,7 @@
     <div class="scrim"></div>
     <div class="c">
       <div class="bc"><a href="index.html">Veltis</a><span class="sep">/</span><span>Walvis</span></div>
-      <img class="lg" src="img/logos/walvis-cw.png" alt="Walvis">
+      <span class="lgp"><img class="lg" src="img/logos/walvis-cw.png" alt="Walvis"></span>
       <h1>Operación minera más <em>sostenible</em>.</h1>
       <p class="lead">Promovemos operaciones mineras sostenibles con soluciones para el control ambiental.</p>
       <a class="btn" href="index.html#unete">Hablemos de tu operación</a>
@@ -265,7 +266,7 @@
       <div class="s"><div class="n"><span>+</span>25</div><div class="l">años de experiencia Veltis</div></div>
       <div class="s"><div class="n"><span>+</span>150</div><div class="l">contratos ejecutados</div></div>
       <div class="s"><div class="n"><span>+</span>4.000</div><div class="l">trabajadores Veltis</div></div>
-      <div class="s"><div class="n"><span>+</span>5</div><div class="l">ciudades en Chile</div></div>
+      <div class="s"><div class="n"><span>+</span>5</div><div class="l">regiones del país</div></div>
     </div>
   </header>
 
@@ -339,13 +340,13 @@
   <section class="casos" id="casos">
     <div class="wrap">
       <div class="chead rv">
-        <h2>Casos de éxito</h2>
-        <a class="more" href="index.html#noticias">Ver todos</a>
+        <h2>Casos de éxito de Veltis</h2>
+        <a class="more" href="noticias.html">Ver todos</a>
       </div>
-      <a class="row rv" href="#"><div class="cl"><div class="tag">Material particulado</div><div class="mini">Ejemplo</div></div><h3>Sistema de control de material particulado en planta</h3><div class="th"><img src="img/b-walvis.jpg" alt=""></div></a>
-      <a class="row rv" href="#"><div class="cl"><div class="tag">Supresión de polvo</div><div class="mini">Ejemplo</div></div><h3>Supresión de polvo en proceso de chancado</h3><div class="th"><img src="img/p13.jpg" alt=""></div></a>
-      <a class="row rv" href="#"><div class="cl"><div class="tag">Retrofit</div><div class="mini">Ejemplo</div></div><h3>Retrofit de colector de polvo y puesta en marcha</h3><div class="th"><img src="img/p16.jpg" alt=""></div></a>
-      <div class="note">Casos de ejemplo · contenido real pendiente de Veltis.</div>
+      <a class="row rv" href="noticias.html"><div class="cl"><div class="tag">Izaje crítico</div><div class="mini">Cero incidentes</div></div><h3>Izaje crítico de 195 toneladas en Cross Conveyor</h3><div class="th"><img src="img/p01.jpg" alt=""></div></a>
+      <a class="row rv" href="noticias.html"><div class="cl"><div class="tag">Relaves</div><div class="mini">Recuperación en plazo</div></div><h3>Reparación integral de espesador de relave</h3><div class="th"><img src="img/p11.jpg" alt=""></div></a>
+      <a class="row rv" href="noticias.html"><div class="cl"><div class="tag">Flotación SAG</div><div class="mini">−50% duración</div></div><h3>Rediseño de mantención en flotación SAG, estandarizado en 39 bancos</h3><div class="th"><img src="img/p13.jpg" alt=""></div></a>
+      <div class="note">Casos transversales del holding · imágenes de referencia pendientes de Veltis.</div>
     </div>
   </section>
 
@@ -387,13 +388,13 @@
         <div class="off"><span class="ci">Los Andes</span><span class="ad">Av. Argentina Oriente #17, of. 29, Ed. Viracocha · +56 34 2490065</span></div>
         <div class="off"><span class="ci">Rancagua</span><span class="ad">Josefina Granger #7, O'Higgins · +56 9 47493686</span></div>
         <div class="off"><span class="ci">Copiapó</span><span class="ad">Dirección pendiente de Veltis</span></div>
-        <div class="off soon"><span class="ci">Perú</span><span class="ad">Próximamente</span></div>
+        <div class="off soon"><span class="ci">Perú</span><span class="ad">Explorando nuevos mercados</span></div>
       </div>
       <div class="gov">
         <div class="col"><div class="h">Sitio</div><a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="noticias.html">Noticias</a><a href="contacto.html">Contacto</a><a href="unete.html">Únete a Veltis</a></div>
         <div class="col"><div class="h">Compañías</div><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div>
         <div class="col"><div class="h">Gobernanza</div><a href="#">Gobierno corporativo</a><a href="nosotros.html#comite">Comité Directivo</a><a href="#">Código de ética</a></div>
-        <div class="col"><div class="h">Cumplimiento</div><a href="#">Canal de Denuncias</a><a href="#">Compliance</a><a href="#">Certificaciones</a></div>
+        <div class="col"><div class="h">Cumplimiento</div><a href="https://veltislatam.buk.cl/partner_complaint/tickets/new" target="_blank" rel="noopener">Canal de Denuncias</a><a href="#">Compliance</a><a href="#">Certificaciones</a></div>
         <div class="col"><div class="h">Sostenibilidad</div><a href="nosotros.html#compromiso">Modelo de impacto</a><a href="#">Empleabilidad territorial</a><a href="#">Sello Iguala</a></div>
         <div class="col"><div class="h">Legal</div><a href="#">Política de Privacidad</a><a href="#">Términos de uso</a><a href="#">Accesibilidad</a></div>
       </div>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Únete a Veltis — Veltis Latam</title>
+<title>Página no encontrada — Veltis Latam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,10 +11,12 @@
   :root{--am:#ffc72c;--am-deep:#E6A800;--negro:#0f0f10;--tinta:#1a1a1c;--blanco:#fff;--hueso:#f6f5f2;--gris:#6c6c6e;--gris-claro:#e4e4df;--tit:'Barlow',system-ui,sans-serif;--body:'Barlow',system-ui,sans-serif;--wrap:1320px;--e:cubic-bezier(.22,.61,.36,1)}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--body);color:var(--tinta);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--body);color:#fff;background:var(--negro);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100svh;display:flex;flex-direction:column}
   a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   h1,h2,h3{font-family:var(--tit);font-weight:600;letter-spacing:-0.02em;text-wrap:balance}
   .wrap{width:90%;max-width:var(--wrap);margin-inline:auto}
+
+  /* NAV (versión sólida, como páginas interiores) */
   .nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(22px,5vw,64px);background:rgba(15,15,16,.92);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(255,255,255,.09)}
   .nav .logo img{height:30px;width:auto;display:block}
   .nav .links{display:flex;gap:clamp(18px,2.3vw,36px)}
@@ -42,25 +44,11 @@
   .nav .links .sub.mini{min-width:272px}
   .nav .links .sub.mini a{display:flex;align-items:center;gap:10px;font-family:var(--tit);font-weight:600;font-size:14px;color:rgba(255,255,255,.85)}
   .nav .links .sub.mini a::before{content:"";width:6px;height:6px;border-radius:50%;background:#ffc72c;flex:0 0 auto}
-  .nav .u{display:inline-flex;align-items:center;color:var(--negro);background:var(--am);font-size:13.5px;font-weight:600;letter-spacing:.02em;padding:11px 18px;border-radius:100px;transition:.25s}
-  .nav .u:hover{background:var(--am-deep);color:#fff}
+  .nav .u{display:inline-flex;align-items:center;color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.02em;border:1px solid rgba(255,255,255,.4);padding:10px 18px;border-radius:100px;transition:.25s}
+  .nav .u:hover{background:var(--am);color:var(--negro);border-color:var(--am)}
   @media(max-width:860px){.nav .links{display:none}}
-  .ph{padding:clamp(118px,16vh,180px) 0 clamp(56px,9vw,110px)}
-  .ph .bc{display:flex;gap:8px;font-family:var(--tit);font-weight:600;font-size:13px;color:var(--gris);margin-bottom:18px}
-  .ph .bc .sep{color:var(--am-deep)}
-  .ph h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;color:var(--negro);letter-spacing:-0.03em}
-  .ph .tag{display:inline-block;margin-top:20px;font-family:var(--tit);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--am-deep);background:#fff7e0;border:1px solid #ffe9a8;padding:7px 14px;border-radius:100px}
-  .ph .lead{font-size:1.18rem;line-height:1.6;color:#3a3a3c;margin-top:22px;max-width:60ch}
-  .ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:clamp(36px,5vw,60px)}
-  .ops .op{border:1px solid var(--gris-claro);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:6px}
-  .ops .op .t{font-family:var(--tit);font-weight:700;font-size:1.2rem;color:var(--negro);display:flex;align-items:center;gap:9px}
-  .ops .op .t::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--am)}
-  .ops .op .s{font-size:.92rem;color:var(--gris)}
-  .tcta{display:inline-flex;margin-top:clamp(26px,4vw,40px);font-family:var(--tit);font-weight:600;font-size:15px;color:var(--negro);border-bottom:2px solid var(--am);padding-bottom:3px;transition:color .2s}
-  .tcta:hover{color:var(--am-deep)}
-  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-  /* ---------------- MENU MOVIL ---------------- */
+  /* MENU MOVIL */
   .nav .burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative;z-index:61;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:0}
   .nav .burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .35s cubic-bezier(.22,.61,.36,1)}
   body.menu-open .nav .burger span:first-child{transform:translateY(4.5px) rotate(45deg)}
@@ -75,36 +63,39 @@
   .mnav .msub{display:flex;flex-wrap:wrap;gap:2px 20px;padding:0 0 16px}
   .mnav .msub a{font-size:1.02rem;color:rgba(255,255,255,.7);padding:4px 0}
   .mnav .msub a:hover,.mnav .msub a:active{color:#fff}
-  .mnav .mi > a.mu{align-self:flex-start;margin-top:28px;border-bottom:0;background:var(--am,var(--amarillo,var(--ac,#ffc72c)));color:var(--negro);font-weight:600;font-size:15px;letter-spacing:.02em;padding:14px 26px;border-radius:100px}
+  .mnav .mi > a.mu{align-self:flex-start;margin-top:28px;border-bottom:0;background:var(--am);color:var(--negro);font-weight:600;font-size:15px;letter-spacing:.02em;padding:14px 26px;border-radius:100px}
   @media(max-width:860px){.nav{justify-content:flex-start;gap:14px}.nav .u{margin-left:auto;padding:9px 15px;font-size:12.5px;white-space:nowrap}.nav .burger{display:flex}}
   @media(min-width:861px){.mnav{display:none}}
 
-  /* ---------------- FOOTER EDITORIAL (oficinas + navegacion + gobernanza) ---------------- */
-  .site-footer{background:var(--negro);color:#fff;padding:clamp(56px,7vw,96px) 0 26px}
-  .site-footer .head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(20px,2.6vw,34px)}
-  .site-footer .head h2{font-family:var(--tit);font-weight:600;font-size:clamp(1.5rem,2.6vw,2.2rem);color:#fff}
-  .site-footer .head h2 em{font-style:normal;color:#ffc72c}
-  .site-footer .soc{display:flex;gap:10px}
-  .site-footer .soc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;font-size:13px;font-weight:700;color:rgba(255,255,255,.7);transition:.25s}
-  .site-footer .soc a:hover{background:#ffc72c;border-color:#ffc72c;color:var(--negro)}
-  .site-footer .offices{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,5vw,84px);border-bottom:1px solid rgba(255,255,255,.14)}
-  .site-footer .off{display:flex;align-items:baseline;gap:16px;padding:15px 0;border-top:1px solid rgba(255,255,255,.14)}
-  .site-footer .off .ci{font-family:var(--tit);font-weight:700;font-size:1rem;color:#fff;flex:0 0 112px;display:flex;align-items:center;gap:9px;white-space:nowrap}
-  .site-footer .off .ci::before{content:"";width:6px;height:6px;border-radius:50%;background:#ffc72c;flex:0 0 auto}
-  .site-footer .off .ad{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
-  .site-footer .off.soon .ci{color:rgba(255,255,255,.55)}
-  .site-footer .off.soon .ci::before{background:rgba(255,255,255,.3)}
-  .site-footer .gov{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(18px,2.2vw,36px);margin-top:clamp(28px,3vw,44px)}
-  .site-footer .gov .h{font-family:var(--tit);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
-  .site-footer .gov a{display:block;color:rgba(255,255,255,.72);font-size:13.5px;padding:5px 0;transition:color .2s}
-  .site-footer .gov a:hover{color:#ffc72c}
-  .site-footer .mark{margin-top:clamp(40px,5vw,72px);border-top:1px solid rgba(255,255,255,.14);padding-top:clamp(30px,4.5vw,56px)}
-  .site-footer .mark img{width:min(420px,62%);height:auto;margin-inline:auto;display:block;opacity:.94;transition:opacity .25s}
-  .site-footer .mark a:hover img{opacity:1}
-  .site-footer .bar{margin-top:clamp(26px,3.4vw,48px);padding-top:18px;border-top:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.4);text-align:center}
-  @media(max-width:940px){.site-footer .gov{grid-template-columns:repeat(3,1fr);gap:26px 20px}}
-  @media(max-width:720px){.site-footer .offices{grid-template-columns:1fr}.site-footer .off{padding:13px 0}.site-footer .off .ci{flex-basis:98px;font-size:.95rem}}
-  @media(max-width:560px){.site-footer .gov{grid-template-columns:1fr 1fr;gap:24px 18px}}
+  /* CONTENIDO 404 */
+  .e{flex:1;display:flex;align-items:center;position:relative;overflow:hidden}
+  .e .bg{position:absolute;inset:0;z-index:0}
+  .e .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.34) grayscale(.15)}
+  .e .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,15,16,.9) 0%,rgba(15,15,16,.62) 48%,rgba(15,15,16,.4) 100%)}
+  .e .wrap{position:relative;z-index:2;padding:clamp(120px,18vh,190px) 0 clamp(60px,10vh,110px)}
+  .e .code{font-family:var(--tit);font-weight:800;font-size:clamp(5rem,17vw,13rem);line-height:.86;letter-spacing:-0.05em;color:#fff}
+  .e .code span{color:var(--am)}
+  .e .kick{font-family:var(--tit);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);display:inline-flex;align-items:center;gap:12px;margin-bottom:26px}
+  .e .kick::before{content:"";width:30px;height:2px;background:var(--am)}
+  .e h1{font-weight:500;font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.08;color:#fff;max-width:20ch;margin-top:20px}
+  .e p{font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.6;color:rgba(255,255,255,.82);max-width:52ch;margin-top:16px}
+  .e .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .e .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--tit);font-weight:600;font-size:15px;padding:15px 30px;border-radius:100px;transition:transform .2s,background .2s,color .2s,border-color .2s}
+  .e .btn.pri{background:var(--am);color:var(--negro)}
+  .e .btn.pri:hover{transform:translateY(-2px);background:var(--am-deep);color:#fff}
+  .e .btn.gho{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+  .e .btn.gho:hover{background:#fff;color:var(--negro);border-color:#fff}
+  .e .quick{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:clamp(38px,5vw,56px);padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+  .e .quick .ql{font-family:var(--tit);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);width:100%;margin-bottom:4px}
+  .e .quick a{font-family:var(--tit);font-weight:600;font-size:14.5px;color:rgba(255,255,255,.8);border-bottom:2px solid transparent;padding-bottom:2px;transition:.2s}
+  .e .quick a:hover{color:#fff;border-bottom-color:var(--am)}
+
+  /* FOOTER minimal */
+  .pf{background:var(--negro);border-top:1px solid rgba(255,255,255,.1);padding:26px 0;position:relative;z-index:2}
+  .pf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.45)}
+  .pf img{height:26px;width:auto}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -132,49 +123,35 @@
     </nav>
   </div>
 
-  <header class="ph">
+  <main class="e">
+    <div class="bg"><img src="img/p01.jpg" alt=""></div>
+    <div class="veil"></div>
     <div class="wrap">
-      <div class="bc"><a href="index.html">Veltis</a><span class="sep">/</span><span>Únete a Veltis</span></div>
-      <h1>Únete a Veltis</h1>
-      <span class="tag">Página en preparación</span>
-      <p class="lead">Las personas están en el centro de todo lo que hacemos. Explora las oportunidades por operación o déjanos tus datos para futuras vacantes.</p>
-      <div class="ops">
-        <div class="op"><span class="t">Operación 1</span><span class="s">Vacantes — pendiente de Veltis</span></div>
-        <div class="op"><span class="t">Operación 2</span><span class="s">Vacantes — pendiente de Veltis</span></div>
-        <div class="op"><span class="t">Operación 3</span><span class="s">Vacantes — pendiente de Veltis</span></div>
-        <div class="op"><span class="t">Operación 4</span><span class="s">Vacantes — pendiente de Veltis</span></div>
-        <div class="op"><span class="t">Operación 5</span><span class="s">Vacantes — pendiente de Veltis</span></div>
-        <div class="op"><span class="t">Operación 6</span><span class="s">Vacantes — pendiente de Veltis</span></div>
+      <span class="kick">Error 404</span>
+      <div class="code">4<span>0</span>4</div>
+      <h1>Esta página no está en operación.</h1>
+      <p>El enlace que seguiste puede haber cambiado de ubicación o ya no existe. Volvamos a terreno conocido.</p>
+      <div class="actions">
+        <a class="btn pri" href="index.html">Volver al inicio</a>
+        <a class="btn gho" href="contacto.html">Contactar a Veltis</a>
       </div>
-      <a class="tcta" href="contacto.html#talento">¿No encuentras tu vacante? Déjanos tus datos →</a>
+      <div class="quick">
+        <span class="ql">O ir directo a</span>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="unete.html">Únete a Veltis</a>
+      </div>
     </div>
-  </header>
+  </main>
 
-  <footer class="site-footer">
+  <footer class="pf">
     <div class="wrap">
-      <div class="head"><h2>Nuestras <em>oficinas</em>.</h2><div class="soc"><a href="https://www.linkedin.com/company/veltis-latam/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/veltislatam/" target="_blank" rel="noopener" aria-label="Instagram">ig</a><a href="mailto:contacto@veltislatam.com" aria-label="Email">@</a></div></div>
-      <div class="offices">
-        <div class="off"><span class="ci">Santiago</span><span class="ad">Av. Andrés Bello 2325, Piso 7, Providencia · +562 3284 9300</span></div>
-        <div class="off"><span class="ci">Antofagasta</span><span class="ad">José Toribio Medina #94 · +56 55 2533600</span></div>
-        <div class="off"><span class="ci">Calama</span><span class="ad">Camino Chiu Chiu Sitio 3, Puerto Seco · +56 55 236369</span></div>
-        <div class="off"><span class="ci">Salamanca</span><span class="ad">Ruiz Valledor #241, Coquimbo · +56 55 253369</span></div>
-        <div class="off"><span class="ci">Los Andes</span><span class="ad">Av. Argentina Oriente #17, of. 29, Ed. Viracocha · +56 34 2490065</span></div>
-        <div class="off"><span class="ci">Rancagua</span><span class="ad">Josefina Granger #7, O'Higgins · +56 9 47493686</span></div>
-        <div class="off"><span class="ci">Copiapó</span><span class="ad">Dirección pendiente de Veltis</span></div>
-        <div class="off soon"><span class="ci">Perú</span><span class="ad">Explorando nuevos mercados</span></div>
-      </div>
-      <div class="gov">
-        <div class="col"><div class="h">Sitio</div><a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="noticias.html">Noticias</a><a href="contacto.html">Contacto</a><a href="unete.html">Únete a Veltis</a></div>
-        <div class="col"><div class="h">Compañías</div><a href="berliam.html">Berliam</a><a href="steel.html">Steel</a><a href="walvis.html">Walvis</a><a href="quintrax.html">Quintrax</a></div>
-        <div class="col"><div class="h">Gobernanza</div><a href="#">Gobierno corporativo</a><a href="nosotros.html#comite">Comité Directivo</a><a href="#">Código de ética</a></div>
-        <div class="col"><div class="h">Cumplimiento</div><a href="https://veltislatam.buk.cl/partner_complaint/tickets/new" target="_blank" rel="noopener">Canal de Denuncias</a><a href="#">Compliance</a><a href="#">Certificaciones</a></div>
-        <div class="col"><div class="h">Sostenibilidad</div><a href="nosotros.html#compromiso">Modelo de impacto</a><a href="#">Empleabilidad territorial</a><a href="#">Sello Iguala</a></div>
-        <div class="col"><div class="h">Legal</div><a href="#">Política de Privacidad</a><a href="#">Términos de uso</a><a href="#">Accesibilidad</a></div>
-      </div>
-      <div class="mark"><a href="index.html" aria-label="Veltis Latam — inicio"><img src="img/logos/veltis-blanco.png" alt="Veltis Latam"></a></div>
-      <div class="bar"><span>© 2026 Veltis Latam. Todos los derechos reservados.</span></div>
+      <a href="index.html" aria-label="Veltis Latam — inicio"><img src="img/logos/veltis-blanco.png" alt="Veltis Latam"></a>
+      <span>© 2026 Veltis Latam. Todos los derechos reservados.</span>
     </div>
   </footer>
+
   <script>
   (function(){
     var b=document.getElementById('burger'),m=document.getElementById('mnav');
